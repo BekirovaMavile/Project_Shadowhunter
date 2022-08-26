@@ -1,6 +1,11 @@
 var express = require('express');
 var router = express.Router();
 
+/* GET home page. */
+router.get('/', function(req, res, next) {
+  res.render('index', { title: 'Сумеречные охотники' });
+});
+
 /* Страница Клэри Фэйрчайлд */
 router.get('/clary', function(req, res, next) {
     res.render('hero', {
