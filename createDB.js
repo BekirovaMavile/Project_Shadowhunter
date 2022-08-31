@@ -11,6 +11,7 @@ async function run() {
         database = client.db("shadowhunter");
         const hunters = database.collection("hunters");
         const result = await hunters.insertMany(data);
+        console.log(`${result.insertedCount} documents were inserted`);
         for (const key in result) {
             console.log(`${key}: ${result[key]}`);
             }
