@@ -1,13 +1,14 @@
 var mongoose = require('mongoose')
 mongoose.connect('mongodb://localhost/mongoose')
 
-var hunters = mongoose.model('hunters', { name: String })
+var schema = mongoose.Schema({name:String})
 
-var hunt = new hunters({ name: 'Alec' })
+schema.methods.say = function(){
+    console.log(this.get("name") + " сказал, что у него есть парабатай")
+}
+var hunters = mongoose.model('hunters', schema)
+
+var hunt = new hunters({ name: 'Алек' })
 hunt.save(function (err) {
-    if (err) {
-        console.log(err)
-    } else {
-        console.log('Парабатай')
-    }
+    hunt.say()
 })
