@@ -30,4 +30,3 @@ var data = [{
     }
 ];
 module.exports.data = data;
-console.log("here")
