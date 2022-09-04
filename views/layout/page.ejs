@@ -35,8 +35,9 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="navbar-nav" >
+          <a href="/" class="nav-item nav-link active">Конклав</a>
             <% menu.forEach(function(hero){ %>
-<a href="/heroes/<%=hero.nick%>"><%=hero.title%></a>
+<a href="/heroes/<%=hero.nick%>" class="nav-item nav-link"><%=hero.title%></a>
 <% }) %>
           </div>
           <div class="navbar-nav ms-auto">
