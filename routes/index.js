@@ -6,7 +6,7 @@ var Hero = require("../models/hunter").Hunter
 router.get('/', function(req, res, next) {
     Hero.find({},{_id:0,title:1,nick:1},function(err,menu){
         res.render('index', {
-                                title: 'Express',
+                                title: 'Сумеречные охотники',
                                 menu: menu
                             });
     })
