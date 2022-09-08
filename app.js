@@ -5,6 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var mongoose = require('mongoose')
 mongoose.connect('mongodb://localhost/shadowhunter')
+var session = require("express-session")
 
 
 var indexRouter = require('./routes/index');
@@ -24,6 +25,14 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(session({
+    secret: "ClaryIsHero",
+    cookie:{maxAge:60*1000},
+    resave: true,
+    saveUninitialized: true
+}))
+
+
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/heroes', heroes);
@@ -41,7 +50,7 @@ app.use(function(err, req, res, next) {
 
   // render the error page
   res.status(err.status || 500);
-  res.render('error', {title:"404", menu: []});
+  res.render('error', {title:"404", picture:"./public/images/error.jpeg", menu: []});
 });
 
 module.exports = app;
