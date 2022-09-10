@@ -58,7 +58,7 @@ app.use(function(err, req, res, next) {
 
   // render the error page
   res.status(err.status || 500);
-  res.render('error', {title:"404", picture:"./public/images/error.jpeg", menu: []});
+  res.render('error', {title:"404", picture:"/images/error.jpeg"});
 });
 
 module.exports = app;
