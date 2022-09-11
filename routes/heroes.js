@@ -46,7 +46,6 @@ router.get('/:nick', function(req, res, next) {
                 title: hero.title,
                 picture: hero.avatar,
                 desc: hero.desc,
-                menu: heroes
             });
         })
 })
