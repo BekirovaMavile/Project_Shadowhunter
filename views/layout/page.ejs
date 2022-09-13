@@ -48,7 +48,14 @@
             <% })} %>
           </div>
           <div class="navbar-nav ms-auto nav navbar-nav navbar-right"">
-            <a href="/logreg" class="nav-item nav-link">Login</a>
+            <%if(user){%>
+         <form action="/logout" method="post">
+         <button type="submit" class="btn btn-link">Выйти</button>
+    </form>
+    <% } else { %>
+        <a href="/logreg" class="nav-item nav-link">Войти</a>
+    <% } %>
+
           </div>
         </div>
       </div>
