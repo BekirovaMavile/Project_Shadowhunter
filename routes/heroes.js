@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+var checkAuth = require("./../middleware/checkAuth.js")
 var Hero = require("../models/hunter").Hunter
 // var async = require("async")
 
@@ -10,7 +11,7 @@ router.get('/', function(req, res, next) {
 });
 
 /* Страница героев */
-router.get('/:nick', function(req, res, next) {
+router.get('/:nick', checkAuth,function(req, res, next) {
     Hero.findOne({nick:req.params.nick}, function(err,hero){
         if(err) return next(err)
         if(!hero) return next(new Error("Нет такого героя в этой книжке"))
