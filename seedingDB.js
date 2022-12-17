@@ -28,17 +28,24 @@ connection.query(drop, err => {
   if (err) {
     throw err
   }
-})
-
-// Run seed query
-connection.query( seedQuery, err => {
+  connection.query( seedQuery, err => {
   if (err) {
     throw err
   }
-
   console.log("SQL seed completed!")
   connection.end()
 })
+})
+
+// Run seed query
+// connection.query( seedQuery, err => {
+//   if (err) {
+//     throw err
+//   }
+
+//   console.log("SQL seed completed!")
+//   connection.end()
+// })
 // // открываем наше соединение с базой данных
 //   connection.connect(err => {
 //     if (err) throw error;
