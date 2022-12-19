@@ -18,7 +18,7 @@ router.get('/:nick', function(req, res, next) {
             // console.log(hunter[0])
             if(hunters.length == 0) return next(new Error("Нет такого охотника в книге"))
             var hunter = hunters[0];
-            res.render('hero', {
+            res.render('hunter', {
             title: hunter.title,
             picture: hunter.avatar,
             desc: hunter.desc
