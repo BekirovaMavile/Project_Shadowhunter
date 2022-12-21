@@ -41,11 +41,16 @@
         <div class="collapse navbar-collapse" id="navbarCollapse9">
           <div class="navbar-nav">
             <a href="/" class="nav-item nav-link active">Конклав</a>
-            <a href="/hunter/clary" class="nav-item nav-link">Клэри</a>
+            <!-- <a href="/hunter/clary" class="nav-item nav-link">Клэри</a>
             <a href="/hunter/jace" class="nav-item nav-link">Джейс</a>
             <a href="/hunter/alec" class="nav-item nav-link">Алек</a>
             <a href="/hunter/magnus" class="nav-item nav-link">Магнус</a>
-            <a href="/hunter/isabel" class="nav-item nav-link">Изабель</a>
+            <a href="/hunter/isabel" class="nav-item nav-link">Изабель</a> -->
+            <% if(typeof nav == 'object' && nav){ nav.forEach(function(item){ %>
+            <a href="/hunter/<%= item.nick %>" class="nav-item nav-link"
+              ><%= item.title %></a
+            >
+            <% })} %>
           </div>
           <div class="navbar-nav ms-auto">
             <a href="#" class="nav-item nav-link">Login</a>

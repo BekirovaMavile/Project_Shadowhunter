@@ -6,7 +6,6 @@ var db = mysql.createConnection({
   password : '',
   database: 'shadowhunter'
 });
-// connection.connect()
 
 db.connect( function (err) { 
     if (err) { 
