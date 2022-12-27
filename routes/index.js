@@ -3,8 +3,9 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Сумеречные охотники' });
+  res.render('index', { title: 'Сумеречные охотники', counter:req.session.counter  });
 });
+
 
 // /* Страница Клэри Фэйрчайлд */
 // router.get('/clary', function(req, res, next) {
