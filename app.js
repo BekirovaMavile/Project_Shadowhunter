@@ -53,7 +53,7 @@ app.use(function(req,res,next){
 })
 
 app.use(require("./middleware/createMenu.js"))
-
+app.use(require("./middleware/createUser.js"))
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
@@ -72,7 +72,7 @@ app.use(function(err, req, res, next) {
 
   // render the error page
   res.status(err.status || 500);
-  res.render('error', {title:"404", picture:"./public/images/error.jpeg", menu: []});
+  res.render('error', {title:"404", picture:"./public/images/error.webp", menu: []});
 });
 
 

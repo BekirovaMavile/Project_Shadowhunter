@@ -1,13 +1,10 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel="stylesheet" href="/stylesheets/style.css" />
-  </head>
-  <body>
-    <% layout('/layout/page.ejs') %>
-    <h1><%= title %></h1>
-    <p>Добро пожаловать в Конклав</p>
-    <p>Счетчик: <%= counter %></p>
-  </body>
-</html>
+<% layout('/layout/page.ejs') %> <%
+if(user) {%>
+<h1>Привет <%= user.username %></h1>
+<% } else { %>
+<h1>Зарегистрируйтесь, чтобы видеть все страницы сайта</h1>
+<% } %>
+
+<h1><%= title %></h1>
+<p>Добро пожаловать в Конклав</p>
+<p>Счетчик: <%= counter %></p>

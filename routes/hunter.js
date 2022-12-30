@@ -2,6 +2,7 @@
 var db = require('../database.js');
 var express = require('express');
 var router = express.Router();
+var checkAuth = require("../middleware/checkAuth.js")
 
 // /* GET users listing. */
 // router.get('/', function(req, res, next) {
@@ -9,7 +10,7 @@ var router = express.Router();
 // });
 
 /* Страница охотников */
-router.get('/:nick', function(req, res, next) {
+router.get('/:nick', checkAuth, function(req, res, next) {
     db.query(`SELECT * FROM hunter WHERE hunter.nick = '${req.params.nick}'`, (err, hunters) => {             
         if(err) {
             console.log(err);
